@@ -43,6 +43,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 4.5rem;
 }
 
 .inputBox {
@@ -137,3 +138,4 @@ input:focus {
     background-color: rgba(180, 180, 180, 0.1);
     border-radius: 6px;
 }
+

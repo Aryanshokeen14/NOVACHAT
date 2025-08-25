@@ -20,7 +20,7 @@ function ChatWindow() {
   const [novaToggle, setNovaToggle] = useState(false);
 
   const getReply = async () => {
-    
+    if (!prompt.trim()) return;
 
     setLoading(true);
     setNewChat(false);
@@ -43,15 +43,36 @@ function ChatWindow() {
       const response = await fetch("http://localhost:3000/api/chat", options);
       const res = await response.json();
       console.log(res);  
-      setReply(res.reply);
+
+      //changes from here
+      setPrevChats((prevChats)=>[
+        ...prevChats,
+        {
+          role:"user",
+          content: prompt,
+        },
+
+        {
+          role:"assistant-perplexity",
+          content: res.replies.perplexity,
+        },
+        
+        {
+          role:"ssistant-openai",
+          content: res.replies.openai,
+        }
+      ]);
+      // setReply(res.reply);
     } catch (err) {
       console.log(err);
     }
     setLoading(false);
+    setPrompt("");
   };
 
 //   Append new chat to prevChats
-  useEffect(() => {
+// this useffect is removed  
+useEffect(() => {
     if (prompt && reply) {
       setPrevChats((prevChats) => [
         ...prevChats,
