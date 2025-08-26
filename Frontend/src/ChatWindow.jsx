@@ -58,7 +58,7 @@ function ChatWindow() {
         },
         
         {
-          role:"ssistant-openai",
+          role:"assistant-openai",
           content: res.replies.openai,
         }
       ]);

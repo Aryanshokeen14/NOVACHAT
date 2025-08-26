@@ -98,8 +98,8 @@ router.post("/chat",async(req,res)=>{
         // res.json({reply: assistantReply});
         res.json({
             replies: {
-                perplexity: perplexityReply,
-                openai: openaiReply
+                perplexity: "PERPLEXITY : "+perplexityReply,
+                openai: "OPENAI : "+openaiReply
             }
         });
     }catch(err){
