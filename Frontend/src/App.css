@@ -9,8 +9,7 @@ body{
 }
 
 .main{
-    background: linear-gradient(90deg, rgb(0, 0, 0), rgb(103, 103, 103));
+    background: linear-gradient(90deg, rgb(17, 17, 17), rgb(43, 43, 43));
   display: flex;
-  /* optional: make it fill the viewport */
   min-height: 100vh;
 }

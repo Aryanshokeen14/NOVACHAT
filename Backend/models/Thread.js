@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const MessageSchema = new mongoose.Schema({
     role: {
         type: String,
-        enum: ["user", "assistant", "assistant-openai", "assistant-perplexity"],
+        enum: ["user", "assistant", "assistant-openai", "assistant-perplexity" , "assistant-gemini"],
         required: true
     },
     content: {
@@ -34,6 +34,10 @@ const ThreadSchema = new mongoose.Schema({
     updatedAt: {
         type: Date,
         default: Date.now
+    },
+    models:{
+        type: String,
+        default: "assistant"
     }
 });
 
