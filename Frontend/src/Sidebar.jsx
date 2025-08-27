@@ -2,7 +2,7 @@ import "./Sidebar.css";
 import { useContext, useEffect } from "react";
 import { MyContext } from "./MyContext.jsx";
 import {v1 as uuidv1} from "uuid";
-
+import novaChatLogo from './assets/novaChatlogo.jpeg'
 
 function Sidebar(){
     const {allThreads, setAllThreads, currThreadId, setNewChat, setPrompt, setReply, setCurrThreadId, setPrevChats} = useContext(MyContext);
@@ -67,7 +67,7 @@ function Sidebar(){
 
     return(
         <section className="sidebar">
-                <img src="src/assets/novaChatlogo.jpeg" alt="gpt logo" className="logo"></img>
+                <img src={novaChatLogo} alt="gpt logo" className="logo"></img>
             <button onClick={createNewChat}>
                 <p>New Chat</p>
                 <span><i className="fa-solid fa-pen-to-square"></i></span>
