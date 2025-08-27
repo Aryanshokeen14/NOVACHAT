@@ -12,10 +12,6 @@ app.use(cors());
 
 app.use("/api", chatRoutes);
 
-app.listen(PORT, () => {
-    console.log(`server running on ${PORT}`);
-    connectDB();
-});
 
 const connectDB = async() => {
     try {
@@ -25,3 +21,8 @@ const connectDB = async() => {
         console.log("Failed to connect with Db", err);
     }
 }
+
+app.listen(PORT, () => {
+    console.log(`server running on ${PORT}`);
+    connectDB();
+});
