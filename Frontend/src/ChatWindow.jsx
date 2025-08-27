@@ -42,7 +42,7 @@ function ChatWindow() {
     };
 
     try {
-      const response = await fetch("http://localhost:3000/api/chat", options);
+      const response = await fetch("https://novachat-78y8.onrender.com/api/chat", options);
       const res = await response.json();
       console.log(res);  
 
